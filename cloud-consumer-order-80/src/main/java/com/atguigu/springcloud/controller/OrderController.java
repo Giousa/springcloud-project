@@ -24,7 +24,10 @@ public class OrderController {
     Logger logger = Logger.getLogger(OrderController.class.getName());
 
 
-    public static final String PAYMENT_URL = "http://localhost:8001/";
+    //单机版
+//    public static final String PAYMENT_URL = "http://localhost:8001/";
+    //Eureka
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Autowired
     private RestTemplate restTemplate;

@@ -24,6 +24,7 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+
     @PostMapping("create")
     public CommonResult create(@RequestBody Payment payment) {
 
@@ -45,6 +46,7 @@ public class PaymentController {
 
         if (payment != null){
             CommonResult commonResult = new CommonResult(200, "查询成功,端口号:"+serverPort, payment);
+
             return commonResult;
         }else {
             return new CommonResult(444,"数据不存在",null);
