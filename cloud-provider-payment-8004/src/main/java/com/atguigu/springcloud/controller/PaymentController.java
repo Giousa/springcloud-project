@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 /**
  * Description:
  * Author:zhangmengmeng
@@ -53,9 +55,10 @@ public class PaymentController {
         }
     }
 
-    @GetMapping("lb")
-    public String getPaymentLB() {
+    //http://localhost:8004/payment/zk
+    @GetMapping("zk")
+    public String paymentZk(){
 
-        return serverPort;
+        return "springcloud with zookeeper:"+serverPort+" :: "+ UUID.randomUUID().toString();
     }
 }
