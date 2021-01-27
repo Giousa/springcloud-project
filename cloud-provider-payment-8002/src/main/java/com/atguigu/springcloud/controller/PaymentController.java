@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Description:
  * Author:zhangmengmeng
@@ -55,6 +57,18 @@ public class PaymentController {
 
     @GetMapping("lb")
     public String getPaymentLB() {
+
+        return serverPort;
+    }
+
+    @GetMapping("openfeign/timeout")
+    public String openFeignTimeout(){
+        System.out.println("openfeign 超时测试,serverPort = "+serverPort);
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        }catch (Exception e){
+
+        }
 
         return serverPort;
     }
