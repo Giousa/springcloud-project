@@ -1,8 +1,7 @@
 package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.service.PaymentHystrixService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 @RequestMapping("order")
-//@DefaultProperties(defaultFallback = "payment_Global_FallbackMethod")
+@DefaultProperties(defaultFallback = "payment_Global_FallbackMethod")
 public class OrderHystrixController {
 
     @Autowired
@@ -37,9 +36,9 @@ public class OrderHystrixController {
     //http://localhost/order/consumer/payment/hystrix/timeout/1
     //5000 这里代表，5秒内能获取返回数据，就代表是正常的，否则就走降级处理
     @GetMapping("consumer/payment/hystrix/timeout/{id}")
-    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod",commandProperties = {
-            @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="10000")
-    })
+//    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod",commandProperties = {
+//            @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="10000")
+//    })
 //    @HystrixCommand
     public String paymentInfoTimeOut(@PathVariable("id") Integer id){
         String result = paymentHystrixService.paymentInfoTimeOut(id);
