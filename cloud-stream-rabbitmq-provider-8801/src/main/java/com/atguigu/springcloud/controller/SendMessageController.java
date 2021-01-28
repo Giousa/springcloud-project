@@ -18,6 +18,7 @@ public class SendMessageController {
     @Autowired
     private IMessageProvider messageProvider;
 
+    //http://localhost:8801/sendMessage
     @GetMapping("/sendMessage")
     public String sendMessage(){
         return messageProvider.send();
