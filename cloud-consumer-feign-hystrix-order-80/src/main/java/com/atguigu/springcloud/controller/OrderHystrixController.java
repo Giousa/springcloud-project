@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @className: OrderHystrixController
  * @description:
- * @author: liusCoding
+ * @author: zmm
  * @create: 2020-06-08 14:21
  */
 

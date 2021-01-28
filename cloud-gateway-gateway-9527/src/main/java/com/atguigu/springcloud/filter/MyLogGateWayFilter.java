@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * @className: MyLogGateWayFilter
  * @description:
- * @author: liusCoding
+ * @author: zmm
  * @create: 2020-06-08 22:43
  */
 

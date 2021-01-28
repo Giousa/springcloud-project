@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * @className: OrderHystrixApplication80
  * @description:
- * @author: liusCoding
+ * @author: zmm
  * @create: 2020-06-08 14:17
  */
 

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 /**
  * @className: PaymentHystrixApplication8001
  * @description:
- * @author: liusCoding
+ * @author: zmm
  * @create: 2020-06-08 10:18
  */
 @SpringBootApplication
