@@ -19,12 +19,12 @@ spring:
             - config
       ####读取分支
       label: main
-#rabbitmq相关配置
-#rabbitmq:
-#  host: localhost
-#  port: 5672
-#  username: guest
-#  password: guest
+  #rabbitmq相关配置
+  rabbitmq:
+    host: 139.224.46.106
+    port: 5672
+    username: guest
+    password: guest
 
 #服务注册到eureka地址
 eureka:
@@ -32,11 +32,12 @@ eureka:
     service-url:
       defaultZone: http://localhost:7001/eureka
 
-##rabbitmq相关配置,暴露bus刷新配置的端点
-#management:
-#  endpoints: #暴露bus刷新配置的端点
-#    web:
-#      exposure:
-#        include: 'bus-refresh'
+#rabbitmq相关配置,暴露bus刷新配置的端点
+#bus-refresh 是和里面默认配置相关
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
 
 

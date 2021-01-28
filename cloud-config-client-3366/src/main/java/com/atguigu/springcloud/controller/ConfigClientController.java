@@ -22,7 +22,7 @@ public class ConfigClientController
     @Value("${server.port}")
     private String serverPort;
 
-    //http://localhost:3355/configInfo
+    //http://localhost:3366/configInfo
     @GetMapping("/configInfo")
     public String getConfigInfo()
     {
