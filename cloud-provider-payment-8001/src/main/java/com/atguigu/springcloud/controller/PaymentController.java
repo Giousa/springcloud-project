@@ -46,6 +46,8 @@ public class PaymentController {
 
     }
 
+    //http://127.0.0.1:8001/payment/get/1
+    //网关方式：http://127.0.0.1:9527/payment/get/1
     @GetMapping("get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id) {
 
@@ -76,6 +78,8 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    //http://127.0.0.1:8001/payment/lb
+    //网关方式：http://127.0.0.1:9527/payment/lb
     @GetMapping("lb")
     public String getPaymentLB() {
 
