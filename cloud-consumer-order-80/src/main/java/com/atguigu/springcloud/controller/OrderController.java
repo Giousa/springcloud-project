@@ -93,4 +93,12 @@ public class OrderController {
         return restTemplate.getForObject(uri + "/payment/lb",String.class);
     }
 
+    //http://localhost/order/consumer/payment/zipkin
+    @GetMapping("consumer/payment/zipkin")
+    public String zipkinTest(){
+        System.out.println("order zipkin 测试");
+
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/zipkin",String.class);
+    }
+
 }

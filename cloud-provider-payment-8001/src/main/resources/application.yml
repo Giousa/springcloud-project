@@ -11,7 +11,12 @@ spring:
     url: jdbc:mysql://47.103.115.252:3306/db2021?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: h5s/X_7FLkzj
-
+  zipkin:
+    base-url: http://139.224.46.106:9411
+    sleuth:
+      sampler:
+      #采样率值介于 0 到 1 之间，1 则表示全部采集
+      probability: 1
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml

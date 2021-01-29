@@ -98,4 +98,12 @@ public class PaymentController {
 
         return serverPort;
     }
+
+    //http://localhost:8001/payment/zipkin
+    @GetMapping("zipkin")
+    public String zipkinTest(){
+        System.out.println("zipkin 测试");
+
+        return "zipkin测试 : "+serverPort;
+    }
 }
