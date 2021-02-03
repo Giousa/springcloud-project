@@ -1,0 +1,42 @@
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloud-alibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.224.46.106:8848 #Nacos服务注册中心地址
+    sentinel:
+      transport:
+        dashboard: 139.224.46.106:8080 #配置Sentinel dashboard地址
+        # 默认8719，若是被占用，依次+1寻找可用端口
+        port: 8719
+        # 部署到Linux服务器，必加（其实就指连接的客户端ip。若是写localhost本地，Linux是无法连接本地检测的，就会超时）
+        # 但是直接写Linux的地址会有一个问题，除非部署到Linux上面，否则的话，也是无法检测的，只能检测心跳等方法
+        # 测试阶段，建议将Sentinel 服务端部署到本地
+        clientIp: 139.224.46.106
+#      datasource:
+#        ds1:
+#          nacos:
+#            server-addr: 139.224.46.106:1111
+#            dataId: cloudalibaba-sentinel-service
+#            groupId: DEFAULT_GROUP
+#            data-type: json
+#            rule-type: flow
+
+
+# 监控图形化界面，必加
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# 激活Sentinel对Feign的支持
+feign:
+  sentinel:
+    enabled: true
+
+

@@ -22,7 +22,7 @@ public class CommonResult<T> {
     private T data;
 
     //两个参数，因为注解上，已经有了空参和全参
-    private CommonResult(Integer code,String message){
+    public CommonResult(Integer code,String message){
         this(code,message,null);
     }
 }
